@@ -1,0 +1,19 @@
+{
+  "name": "mediapipe-hand-particles",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "0.10.13",
+    "crypto-js": "4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "5.6.3",
+    "vite": "5.4.9"
+  }
+}

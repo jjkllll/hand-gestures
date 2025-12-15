@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手势控制粒子特效</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="toolbar">
+        <button id="btn-start">开始摄像头</button>
+        <button id="btn-stop">停止摄像头</button>
+        <label style="display:flex;align-items:center;gap:6px;">
+          <input id="chk-mirror" type="checkbox" checked />
+          镜像
+        </label>
+        <select id="effect-select"></select>
+        <button id="btn-edit-effect">编辑特效</button>
+        <select id="gesture-label">
+          <option value="OpenPalm">OpenPalm</option>
+          <option value="Fist">Fist</option>
+          <option value="Pinch">Pinch</option>
+          <option value="Point">Point</option>
+          <option value="Victory">Victory</option>
+        </select>
+        <button id="btn-choose-dir">选择保存目录</button>
+        <button id="btn-save-gesture">保存当前手势</button>
+        <button id="btn-open-record-panel">手势采样面板</button>
+        <button id="btn-load-library">加载手势库</button>
+        <button id="btn-open-analysis">手势库分析</button>
+        <button id="btn-record">开始记录</button>
+        <button id="btn-export">导出记录</button>
+        <span id="status"></span>
+      </div>
+      <div class="stage">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+        <div id="recognition-info"></div>
+      </div>
+      <div id="modal-backdrop" class="hidden">
+        <div id="modal">
+          <div class="modal-header">
+            <span>编辑粒子特效</span>
+            <button id="modal-close">×</button>
+          </div>
+          <div id="editor-fields"></div>
+          <div class="modal-footer">
+            <button id="modal-apply">应用</button>
+            <button id="modal-cancel">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+  </html>

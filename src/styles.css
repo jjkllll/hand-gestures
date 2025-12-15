@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0a0a0a;
+  color: #e6e6e6;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: #141414;
+  border-bottom: 1px solid #222;
+  align-items: center;
+}
+.toolbar button {
+  background: #2a2a2a;
+  color: #e6e6e6;
+  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.toolbar select {
+  background: #1e1e1e;
+  color: #e6e6e6;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.toolbar button:hover {
+  background: #333;
+}
+.stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+#webcam {
+  max-width: 100%;
+  max-height: 100%;
+}
+#overlay {
+  position: absolute;
+  inset: 0;
+}
+#recognition-info {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 8px 10px;
+  background: rgba(20,20,20,0.7);
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 12px;
+  backdrop-filter: blur(2px);
+}
+#status {
+  margin-left: auto;
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+#modal-backdrop.hidden {
+  display: none;
+}
+#modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#modal {
+  width: 380px;
+  background: #121212;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.modal-header, .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #222;
+}
+.modal-footer {
+  border-top: 1px solid #222;
+  border-bottom: none;
+}
+#modal-close {
+  background: #2a2a2a;
+  color: #e6e6e6;
+  border: 1px solid #333;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+#editor-fields {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.field {
+  display: grid;
+  grid-template-columns: 120px 1fr 60px;
+  align-items: center;
+  gap: 8px;
+}
+.field label {
+  opacity: 0.9;
+}
+.field input[type="range"], .field input[type="number"] {
+  width: 100%;
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手势采样面板</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="toolbar">
+        <button id="btn-start">开始摄像头</button>
+        <button id="btn-stop">停止摄像头</button>
+        <label style="display:flex;align-items:center;gap:6px;">
+          <input id="chk-mirror" type="checkbox" checked />
+          镜像
+        </label>
+        <button id="btn-choose-dir">选择保存目录</button>
+        <button id="btn-load-lib">加载手势库</button>
+        <select id="gesture-select" style="width:180px;"><option value="">选择手势</option></select>
+        <input id="gesture-id" type="text" placeholder="手势编号" style="width:120px;" />
+        <input id="gesture-name" type="text" placeholder="手势名称" style="width:140px;" />
+        <button id="btn-start-sampling">开始采样</button>
+        <button id="btn-sample">采样</button>
+        <button id="btn-finish">完成记录</button>
+        <span id="status"></span>
+      </div>
+      <div class="stage" style="gap:12px;">
+        <div style="position:relative;flex:0 0 auto;max-width:25vw;">
+          <video id="webcam" autoplay playsinline></video>
+          <canvas id="overlay"></canvas>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:8px;">
+          <div style="border:1px solid #333;border-radius:8px;padding:8px;">
+            <div style="opacity:0.8;margin-bottom:8px;">当前帧归一化关键点</div>
+            <div id="features-table" style="overflow:auto;max-height:40vh;"></div>
+          </div>
+          <div style="border:1px solid #333;border-radius:8px;padding:8px;">
+            <div style="opacity:0.8;margin-bottom:8px;">样品列表</div>
+            <div id="samples-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/record.ts"></script>
+  </body>
+  </html>

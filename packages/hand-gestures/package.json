@@ -1,0 +1,35 @@
+{
+  "name": "hand-gestures",
+  "version": "0.1.0",
+  "description": "Gesture library loader and recognizer (ESM/UMD)",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/hand-gestures.umd.js",
+  "jsdelivr": "dist/hand-gestures.umd.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.0",
+    "typescript": "^5.6.3"
+  }
+}

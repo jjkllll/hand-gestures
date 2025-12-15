@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手势库分析</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="toolbar">
+        <button id="btn-load">加载手势库</button>
+        <select id="code-select"></select>
+        <label>阈值因子<input id="k-factor" type="number" step="0.1" value="2" style="width:80px;"></label>
+        <label>尖端权重<input id="tip-weight" type="number" step="0.1" value="2" style="width:80px;"></label>
+        <label>基础权重<input id="base-weight" type="number" step="0.1" value="1" style="width:80px;"></label>
+        <button id="btn-apply">应用</button>
+        <span id="status"></span>
+      </div>
+      <div class="stage" style="gap:16px;">
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+          <div>均值样本</div>
+          <canvas id="mean-canvas" width="320" height="320" style="border:1px solid #333;border-radius:8px;"></canvas>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-items:center;">
+          <div>距离分布</div>
+          <canvas id="dist-canvas" width="480" height="320" style="border:1px solid #333;border-radius:8px;"></canvas>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/analysis.ts"></script>
+  </body>
+  </html>
